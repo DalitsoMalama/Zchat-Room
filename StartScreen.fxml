@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importing necessary JavaFX components -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<!-- The root GridPane element for the start screen UI -->
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StartScreenController">
+    <!-- Define column constraints -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+
+    <!-- Define row constraints -->
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+
+    <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Label text="SELECT SERVER OR CLIENT" textFill="#383938" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+        <!-- Button for starting as a server -->
+        <Button mnemonicParsing="false" onAction="#initServer" stylesheets="@MyButtonStyle.css" text="SERVER" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets bottom="40.0" />
+            </GridPane.margin>
+        </Button>
+
+                                <!-- Button for starting as a client -->
+        <Button mnemonicParsing="false" onAction="#initClient" stylesheets="@MyButtonStyle.css" text="CLIENT" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+    </children>
+</GridPane>

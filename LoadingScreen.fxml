@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importing necessary JavaFX components -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+
+<!-- The root GridPane element for the loading screen UI -->
+
+<GridPane alignment="center" hgap="0" prefHeight="200" prefWidth="200" vgap="0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoadingScreenController">
+    <!-- Define column constraints -->
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+
+    <!-- Define row constraints -->
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+    <children>
+        <!-- ProgressIndicator to show loading progress -->
+        <ProgressIndicator GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets bottom="40.0" />
+            </GridPane.margin>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.10660331696271896" green="0.32894736528396606" blue="0.29930150508880615" />
+               </color>
+               <input>
+                  <ColorAdjust />
+               </input>
+            </DropShadow>
+         </effect>
+        </ProgressIndicator>
+
+        <!-- Label to display loading message -->
+        <Label fx:id="loadLbl" text="Searching for Bluetooth Devices ..." GridPane.rowIndex="1" />
+    </children>
+</GridPane>
